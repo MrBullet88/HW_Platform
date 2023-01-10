@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class parallaxEffect : MonoBehaviour
+public class Parallax : MonoBehaviour
 {
     [SerializeField] private Transform _mainCamera;
     [SerializeField, Range(0f, 1f)] private float _parallaxStrenght = 0.1f;

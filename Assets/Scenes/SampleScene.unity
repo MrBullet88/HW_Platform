@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55843b670443b6e4497a17585c620848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinTemplate: {fileID: -4684824385813308713, guid: 0d091f937cf6f794d9f2b2bf05e70fa5, type: 3}
+  _template: {fileID: -4684824385813308713, guid: 0d091f937cf6f794d9f2b2bf05e70fa5, type: 3}
   _spawnPoints:
   - {fileID: 633872966}
   - {fileID: 1408738374}
@@ -1848,11 +1848,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1817939942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d85d53ba39bad145a61c8f9c272debf, type: 3}
+  m_Script: {fileID: 11500000, guid: b5a7399d1737fc04aa8302819ec882ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 519420032}
-  _parallaxStrenght: 0.408
+  _parallaxStrenght: 0.396
   _disableVerticalParallax: 0
 --- !u!1 &1828423432
 GameObject:

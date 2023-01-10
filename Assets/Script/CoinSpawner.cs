@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-    [SerializeField] private Coin _coinTemplate;
+    [SerializeField] private Coin _template;
     [SerializeField] private Transform[] _spawnPoints;
 
     private int _randomPoint;
@@ -19,13 +19,11 @@ public class CoinSpawner : MonoBehaviour
         while (_spawnerCoinsCount > 0)
         {
             _randomPoint = Random.Range(0, _spawnPoints.Length);
-            var newCoin = Instantiate(_coinTemplate, _spawnPoints[_randomPoint].position, Quaternion.identity);
+            var newCoin = Instantiate(_template, _spawnPoints[_randomPoint].position, Quaternion.identity);
             _spawnerCoinsCount--;
 
             while(newCoin != null)
-            {
-                yield return null;
-            }           
+                yield return null;                    
         }
     }
 }

@@ -5,6 +5,8 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public class SimpleController : MonoBehaviour
 {    
     [SerializeField] private float _speed;
@@ -19,9 +21,9 @@ public class SimpleController : MonoBehaviour
     private bool _isFacingRight = true;
       
     private void Start()
-    {
-        _rigidbody2D = transform.GetComponent<Rigidbody2D>();
-        _animator = transform.GetComponent<Animator>();      
+    {      
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();      
     }
 
     private void Update()
@@ -36,11 +38,11 @@ public class SimpleController : MonoBehaviour
 
         if(_moveInput>0 && IsGrounded() || _moveInput<0 && IsGrounded())
         {
-            _animator.SetBool("isRunning", true);
+            _animator.SetBool(RunAnimController.Params.IsRunning, true);
         }
         else 
         {
-            _animator.SetBool("isRunning", false);
+            _animator.SetBool(RunAnimController.Params.IsRunning, false);
         }
        
         Flip();
@@ -60,5 +62,12 @@ public class SimpleController : MonoBehaviour
             localScale.x *= -1;
             transform.localScale = localScale;
         }
+    }
+}
+public static class RunAnimController
+{
+    public static class Params
+    {
+        public const string IsRunning = "IsRunning";
     }
 }
